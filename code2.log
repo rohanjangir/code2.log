@@ -1,0 +1,269 @@
+function show(x,y){
+return x+y;
+}
+undefined
+typeof show;
+"function"
+show();
+NaN
+show(10,20);
+30
+undefined+undefined;
+NaN
+var t;
+undefined
+t=100;
+100
+var p;
+undefined
+typeof p;
+"undefined"
+typeof t;
+"number"
+null+null;
+0
+null+undefined;
+NaN
+p;
+undefined
+if(!p){
+p=0;
+}
+0
+if(typeof p=="undefind"){
+p=0;
+};
+undefined
+p;
+0
+p=undefined;
+undefined
+p?100:0;
+0
+p=1;
+1
+p?100:0;
+100
+function show(x,y){
+return x+y;
+}
+undefined
+show();
+NaN
+function show(x,y){
+x=x || 0;
+y=y || 0;
+return x+y;
+}
+undefined
+show();
+0
+show(10);
+10
+show(10,20);
+30
+function show(x=0,y=0){
+// x=x || 0;
+// y=y || 0;
+return x+y;
+}
+undefined
+show();
+0
+show(1000,2000);
+3000
+show(1000);
+1000
+function add(){
+console.log("N args");
+}
+undefined
+add();
+VM660:2 N args
+undefined
+add(10);
+VM660:2 N args
+undefined
+add(10,"Rohan",true,20);
+VM660:2 N args
+undefined
+add;
+ƒ add(){
+console.log("N args");
+}
+console.dir(add);
+VM791:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM660:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log("N args",arguments.length);
+}
+undefined
+add();
+VM859:2 N args 0
+undefined
+add(10);
+VM859:2 N args 1
+undefined
+add(10,20,30);
+VM859:2 N args 3
+undefined
+function add(){
+var sum=0;
+// console.log("N args",arguments.length);
+for(let i=0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+VM1139:6 Uncaught SyntaxError: Unexpected end of input
+function add(){
+var sum=0;
+// console.log("N args",arguments.length);
+for(let i=0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+}
+undefined
+function add(){
+var sum=0;
+// console.log("N args",arguments.length);
+for(let i=0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(10,20);
+30
+add(1,2,3,4,5,6);
+21
+function add(...args){
+var sum=0;
+for(let a of args){
+sum+=a;
+}
+return sum;
+}
+undefined
+add();
+0
+add(1,2,3,4,5,6,7);
+28
+var e=[10,20,30,40,50];
+undefined
+var e2=[1,2,3,4,5];
+undefined
+var e3=[e,e2];  
+undefined
+e3;
+(2) [Array(5), Array(5)]0: (5) [10, 20, 30, 40, 50]1: (5) [1, 2, 3, 4, 5]length: 2__proto__: Array(0)
+var e3=[...e,...e2];
+undefined
+e3;
+(10) [10, 20, 30, 40, 50, 1, 2, 3, 4, 5]0: 101: 202: 303: 404: 505: 16: 27: 38: 49: 5length: 10__proto__: Array(0)
+e[0]=100000;
+100000
+e;
+(5) [100000, 20, 30, 40, 50]
+e3;
+(10) [10, 20, 30, 40, 50, 1, 2, 3, 4, 5]
+var obj={"id":1001,name:"Rohan",salary:99999};
+undefined
+obj["name"];
+"Rohan"
+var temp={"delhi":31,"mumbai":29};
+undefined
+temp["delhi"];
+31
+temp.delhi;
+31
+e;
+(5) [100000, 20, 30, 40, 50]
+var m=[...e];
+undefined
+m;
+(5) [100000, 20, 30, 40, 50]
+var t1={...obj,...temp};
+undefined
+t1;
+{id: 1001, name: "Rohan", salary: 99999, delhi: 31, mumbai: 29}
+e;
+(5) [100000, 20, 30, 40, 50]
+var w=e[0];
+undefined
+w;
+100000
+var [r,,r2,r3];
+VM1879:1 Uncaught SyntaxError: Missing initializer in destructuring declaration
+var [r,,r2,r3]=e;
+undefined
+e;
+(5) [100000, 20, 30, 40, 50]
+r;
+100000
+r2;
+30
+r3;
+40
+obj;
+{id: 1001, name: "Rohan", salary: 99999}
+var t=obj.id;
+undefined
+var {id,name}=obj;
+undefined
+id;
+1001
+name;
+"Rohan"
+salary;
+VM2014:1 Uncaught ReferenceError: salary is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2014:1
+function printIt(obj2){
+console.log("obj",obj2.id,obj2.name);
+}
+undefined
+printIt(obj);
+VM2161:2 obj 1001 Rohan
+undefined
+function printIt(id ,name){
+console.log("obj",id,name);
+}
+undefined
+printIt(obj);
+VM2291:2 obj {id: 1001, name: "Rohan", salary: 99999} undefined
+undefined
+function printIt({id ,name}){
+console.log("obj",id,name);
+}
+undefined
+printIt(obj);
+VM2321:2 obj 1001 Rohan
+undefined
+function show(x,y){
+return x+y;
+}
+undefined
+typeof show;
+"function"
+show(10,20);
+30
+show();
+NaN
+undefined+undefined;
+NaN
+function printIt({id ,name}){
+console.log("obj",id,name);
+}
+undefined
+printIt(obj);
+VM2415:2 obj 1001 Rohan
+undefined
+typeof printIt;
+"function"
+typeof id;
+"number"
+typeof name;
+"string"
+typeof obj;
+"object"
